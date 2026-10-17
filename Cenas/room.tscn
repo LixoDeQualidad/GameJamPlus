@@ -1,0 +1,140 @@
+[gd_scene format=4 uid="uid://dh7xku4isqeuq"]
+
+[ext_resource type="Script" uid="uid://drhpwvtosxci5" path="res://Scripts/salas/room.gd" id="1_cp311"]
+[ext_resource type="Texture2D" uid="uid://b8bac7h8wsh2" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="1_h7onx"]
+[ext_resource type="Texture2D" uid="uid://c58w14ofiaujb" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="2_a1twj"]
+[ext_resource type="PackedScene" uid="uid://cduh5tu1h2loj" path="res://entites/player.tscn" id="3_qsu18"]
+[ext_resource type="PackedScene" uid="uid://b3b04uxa3nwbt" path="res://entites/door.tscn" id="4_sfgmp"]
+[ext_resource type="Texture2D" uid="uid://buny642ue0oyp" path="res://Sprites/Originais/bed.png" id="5_a1twj"]
+[ext_resource type="PackedScene" uid="uid://bqeidnn8grky0" path="res://entites/telescope.tscn" id="6_qsu18"]
+[ext_resource type="PackedScene" uid="uid://d03hkyxrvcip5" path="res://entites/pc.tscn" id="7_sfgmp"]
+[ext_resource type="PackedScene" uid="uid://bwqa7tq425pq0" path="res://entites/ela.tscn" id="8_px6d0"]
+[ext_resource type="Script" uid="uid://bdb1opr6h4rii" path="res://Scripts/DialogueBox.gd" id="9_t3whl"]
+[ext_resource type="AudioStream" uid="uid://832651wbqms5" path="res://audios/fala_2.wav" id="10_cp311"]
+[ext_resource type="Script" uid="uid://cuws1yhdns63g" path="res://Scripts/pause_menu.gd" id="11_t3whl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bisa2"]
+texture = ExtResource("1_h7onx")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, -8, 8, -8, 8, 8, 3.4173164, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.5971746, -8, -4.136751, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, -8, 8, -8, 8, 8, 3.4173164, 8)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -3.5971746, -8, -4.136751, 8, -8, 8)
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vl3kk"]
+texture = ExtResource("2_a1twj")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pl7un"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bisa2")
+sources/1 = SubResource("TileSetAtlasSource_vl3kk")
+
+[node name="RoomDia1" type="Node2D" unique_id=662619707]
+script = ExtResource("1_cp311")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1746528063]
+tile_map_data = PackedByteArray("AAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAANAAwAAAABAAEAAAAOAAwAAAABAAEAAAAPAAwAAAABAAEAAAAPAAsAAAABAAEAAAAPAAoAAAABAAEAAAAPAAkAAAABAAEAAAAPAAgAAAABAAEAAAAOAAgAAAABAAEAAAAOAAcAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAAOAAsAAAABAAEAAAAOAAoAAAABAAEAAAAOAAkAAAABAAEAAAANAAcAAAABAAEAAAAMAAcAAAABAAEAAAALAAcAAAABAAEAAAAKAAcAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAABAAEAAAAJAAsAAAABAAEAAAAKAAsAAAABAAEAAAAKAAwAAAABAAEAAAAKAA0AAAABAAEAAAALAA0AAAABAAEAAAALAA4AAAABAAIAAAAMAA4AAAABAAIAAAANAA4AAAABAAIAAAAOAA4AAAABAAIAAAAPAA0AAAABAAEAAAAQAA0AAAABAAEAAAARAA0AAAABAAEAAAARAAwAAAABAAEAAAASAAwAAAABAAEAAAASAAsAAAABAAEAAAATAAoAAAABAAEAAAATAAkAAAABAAEAAAATAAgAAAABAAEAAAATAAcAAAABAAEAAAASAAYAAAABAAAAAAARAAYAAAABAAAAAAAQAAYAAAABAAAAAAAPAAYAAAABAAAAAAAOAAYAAAABAAAAAAANAAYAAAABAAAAAAAMAAYAAAABAAAAAAAKAAgAAAABAAEAAAALAAkAAAABAAEAAAAPAAcAAAABAAEAAAAQAAcAAAABAAEAAAARAAcAAAABAAEAAAASAAcAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAASAAoAAAABAAEAAAARAAoAAAABAAEAAAARAAsAAAABAAEAAAARAAkAAAABAAEAAAAQAAgAAAABAAEAAAARAAgAAAABAAEAAAAQAAkAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAAQAAwAAAABAAEAAAAOAA0AAAABAAEAAAANAA0AAAABAAEAAAAMAA0AAAABAAEAAAALAAwAAAABAAEAAAALAAsAAAABAAEAAAALAAoAAAABAAEAAAALAAgAAAABAAEAAAAKAAkAAAABAAEAAAAKAAoAAAABAAEAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAcAAAACAAAAAAAUAAgAAAACAAEAAAAUAAkAAAACAAEAAAAUAAoAAAACAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAALAAYAAQAAAAEAAAAIAAcAAAAAAAEAAAAIAAgAAAAAAAEAAAAIAAkAAAAAAAEAAAAIAAoAAAAAAAEAAAAIAAsAAAAAAAEAAAAIAAwAAAAAAAEAAAAIAA0AAAAAAAEAAAAJAA0AAAABAAEAAAAJAA4AAAABAAIAAAAIAA4AAAAAAAIAAAAKAA4AAAADAAIAAAAJAAwAAAABAAEAAAAPAA4AAAABAAIAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAATAA0AAAABAAEAAAASAA0AAAABAAEAAAATAA4AAAABAAIAAAAUAA0AAAACAAEAAAAUAAwAAAACAAEAAAAUAAsAAAACAAEAAAAUAA4AAAACAAIAAAASAA4AAAABAAIAAAA=")
+tile_set = SubResource("TileSet_pl7un")
+
+[node name="Player" parent="." unique_id=283352557 instance=ExtResource("3_qsu18")]
+top_level = true
+position = Vector2(247, 169)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2053997912]
+position = Vector2(247, 169)
+zoom = Vector2(2.5, 2.5)
+
+[node name="Door" parent="." unique_id=1595480160 instance=ExtResource("4_sfgmp")]
+position = Vector2(176, 96)
+
+[node name="Bed" type="Sprite2D" parent="." unique_id=1961618425]
+position = Vector2(250, 192)
+texture = ExtResource("5_a1twj")
+
+[node name="Telescope" parent="." unique_id=1345883108 instance=ExtResource("6_qsu18")]
+position = Vector2(172, 211)
+
+[node name="pc" parent="Telescope" unique_id=54256555 instance=ExtResource("7_sfgmp")]
+position = Vector2(79, -104)
+
+[node name="Ela1" parent="." unique_id=1543456910 instance=ExtResource("8_px6d0")]
+position = Vector2(283.32904, 212.11125)
+
+[node name="DialogueBox" type="CanvasLayer" parent="Ela1" unique_id=1945383418]
+visible = false
+script = ExtResource("9_t3whl")
+
+[node name="Panel" type="Panel" parent="Ela1/DialogueBox" unique_id=693595246]
+offset_left = 6.0
+offset_top = 542.0
+offset_right = 715.0
+offset_bottom = 647.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ela1/DialogueBox/Panel" unique_id=2030913555]
+stream = ExtResource("10_cp311")
+bus = &"SFX"
+
+[node name="Label" type="Label" parent="Ela1/DialogueBox/Panel" unique_id=1675859872]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 5.0
+offset_right = 98.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 20
+text = "hummm"
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1545255749]
+visible = false
+script = ExtResource("11_t3whl")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu" unique_id=1827128519]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6156863)
+
+[node name="ButtonContinuar" type="Button" parent="PauseMenu" unique_id=119281521]
+offset_left = 1.0
+offset_top = 238.0
+offset_right = 229.0
+offset_bottom = 321.0
+text = "Continuar"
+
+[node name="ButtonSair" type="Button" parent="PauseMenu" unique_id=980799841]
+offset_left = 5.0
+offset_top = 345.0
+offset_right = 232.0
+offset_bottom = 423.0
+text = "Sair"
+
+[node name="ButtonMenu" type="Button" parent="PauseMenu" unique_id=1757414595]
+offset_left = 2.0
+offset_top = 454.0
+offset_right = 235.0
+offset_bottom = 532.0
+text = "Menu"
+
+[connection signal="pressed" from="PauseMenu/ButtonContinuar" to="PauseMenu" method="_on_button_continuar_pressed"]
+[connection signal="pressed" from="PauseMenu/ButtonSair" to="PauseMenu" method="_on_btn_sair_pressed"]
+[connection signal="pressed" from="PauseMenu/ButtonMenu" to="PauseMenu" method="_on_btn_menu_pressed"]

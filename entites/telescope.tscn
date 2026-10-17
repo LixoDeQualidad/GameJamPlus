@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bqeidnn8grky0"]
+
+[ext_resource type="Script" uid="uid://dp1gj1hc25343" path="res://Scripts/telescope.gd" id="1_d2qri"]
+[ext_resource type="PackedScene" uid="uid://d2r2twi7lgc1q" path="res://Cenas/telescope_view.tscn" id="2_127pa"]
+[ext_resource type="Texture2D" uid="uid://5cc7nhff5coq" path="res://Sprites/Originais/telescope.png" id="3_sxbbs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvf33"]
+custom_solver_bias = 0.1
+radius = 6.897856
+height = 22.359816
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
+radius = 40.012497
+
+[node name="Telescope" type="Area2D" unique_id=1345883108]
+script = ExtResource("1_d2qri")
+view_scene = ExtResource("2_127pa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=17414436]
+position = Vector2(-0.9999995, 1.9999998)
+rotation = 1.7418386
+shape = SubResource("CapsuleShape2D_xvf33")
+
+[node name="Telescope" type="Sprite2D" parent="." unique_id=772307917]
+position = Vector2(-1, -22)
+texture = ExtResource("3_sxbbs")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=809872725]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1667130579]
+shape = SubResource("CircleShape2D_ebum8")
+debug_color = Color(1, 1, 1, 0)

@@ -1,0 +1,118 @@
+[gd_scene format=3 uid="uid://cv6ciefv3t2ki"]
+
+[ext_resource type="Script" uid="uid://c3j5xd8pmjaoc" path="res://Scripts/config.gd" id="1_syyjb"]
+[ext_resource type="Script" uid="uid://cuy3bwuqj7rao" path="res://Scripts/buttons/remap_button.gd" id="2_fmf10"]
+[ext_resource type="Script" uid="uid://bv67mpuuml0ge" path="res://Scripts/buttons/remap_button_2.gd" id="3_2j2v5"]
+[ext_resource type="Script" uid="uid://bhekjqdax8a8v" path="res://Scripts/buttons/remap_button_3.gd" id="4_hilny"]
+[ext_resource type="Script" uid="uid://b6rhcgqrorkuj" path="res://Scripts/buttons/remap_button_4.gd" id="5_swktt"]
+[ext_resource type="Script" uid="uid://467nkt343hkd" path="res://Scripts/buttons/remap_button_5.gd" id="6_fg0qi"]
+[ext_resource type="Script" uid="uid://b5vp85fflt6wx" path="res://Scripts/buttons/remap_button_6.gd" id="7_w2ymk"]
+
+[node name="Config" type="Control" unique_id=15338146]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syyjb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1631073682]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1797045663]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 183.0
+offset_right = 1002.0
+offset_bottom = 223.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=428202576]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=2006005408]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Efeitos Sonoros"
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer/HBoxContainer" unique_id=2062874755]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+min_value = 100.0
+max_value = 1000.0
+value = 100.0
+ticks_position = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=736266803]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 136.0
+offset_right = 981.0
+offset_bottom = 176.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" unique_id=2094918967]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer" unique_id=298508134]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Musica"
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer2/HBoxContainer" unique_id=723856621]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_constants/grabber_offset = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=1185356987]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 318.0
+offset_right = 1158.0
+offset_bottom = 632.0
+alignment = 1
+
+[node name="RemapButton" type="Button" parent="VBoxContainer3" unique_id=312373222]
+layout_mode = 2
+text = "up"
+script = ExtResource("2_fmf10")
+
+[node name="RemapButton2" type="Button" parent="VBoxContainer3" unique_id=1911308055]
+layout_mode = 2
+text = "down"
+script = ExtResource("3_2j2v5")
+
+[node name="RemapButton3" type="Button" parent="VBoxContainer3" unique_id=1217839164]
+layout_mode = 2
+text = "left"
+script = ExtResource("4_hilny")
+
+[node name="RemapButton4" type="Button" parent="VBoxContainer3" unique_id=574025273]
+layout_mode = 2
+text = "right"
+script = ExtResource("5_swktt")
+
+[node name="RemapButton5" type="Button" parent="VBoxContainer3" unique_id=740803861]
+layout_mode = 2
+text = " Interact
+"
+script = ExtResource("6_fg0qi")
+
+[node name="RemapButton6" type="Button" parent="VBoxContainer3" unique_id=859369153]
+layout_mode = 2
+text = "Reset"
+script = ExtResource("7_w2ymk")
+
+[node name="Button" type="Button" parent="." unique_id=1019357715]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 26.0
+offset_right = 78.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 22
+text = "Back
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_btn_back_pressed"]

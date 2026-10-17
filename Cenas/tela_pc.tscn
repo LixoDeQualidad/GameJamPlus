@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c4scs0i7viqs1"]
+
+[ext_resource type="Script" uid="uid://chphgb6utg5gs" path="res://Scripts/tela_pc.gd" id="1_d1kcw"]
+[ext_resource type="Texture2D" uid="uid://w1lmsfgbtomd" path="res://Sprites/Originais/images.jpg" id="1_rx0vj"]
+
+[node name="TelaPc" type="CanvasLayer" unique_id=2080619803]
+script = ExtResource("1_d1kcw")
+
+[node name="Images" type="Sprite2D" parent="." unique_id=1664855531]
+position = Vector2(575, 324.5)
+scale = Vector2(1.6485714, 1.4908676)
+texture = ExtResource("1_rx0vj")
+
+[node name="BtnFechar" type="Button" parent="." unique_id=469276230]
+offset_left = 1071.0
+offset_top = 610.0
+offset_right = 1141.0
+offset_bottom = 641.0
+text = "ON/OFF"
+
+[node name="Button2" type="Button" parent="." unique_id=422461690]
+offset_left = 126.0
+offset_top = 28.0
+offset_right = 179.0
+offset_bottom = 86.0
+text = "App2"
+
+[node name="Button" type="Button" parent="." unique_id=106641852]
+offset_left = 27.0
+offset_top = 27.0
+offset_right = 74.0
+offset_bottom = 85.0
+text = "app1
+"
+
+[node name="Button3" type="Button" parent="." unique_id=119503968]
+offset_left = 257.0
+offset_top = 31.0
+offset_right = 304.0
+offset_bottom = 89.0
+text = "app3"

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://b3b04uxa3nwbt"]
+
+[ext_resource type="Script" uid="uid://srgjxx0btbv8" path="res://Scripts/door.gd" id="1_i6mk8"]
+[ext_resource type="Texture2D" uid="uid://c58w14ofiaujb" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="2_u2e27"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v6xrn"]
+texture = ExtResource("2_u2e27")
+0:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ebum8"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_v6xrn")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
+radius = 36.013885
+
+[node name="Door" type="Area2D" unique_id=1595480160]
+script = ExtResource("1_i6mk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1317018790]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1167055592]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_ebum8")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=944236660]
+
+[node name="InteractionArea" type="CollisionShape2D" parent="InteractionArea" unique_id=774783635]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_ebum8")
+debug_color = Color(1, 1, 1, 0.105882354)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

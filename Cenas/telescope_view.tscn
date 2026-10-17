@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d2r2twi7lgc1q"]
+
+[ext_resource type="Script" uid="uid://dy30cr7i5dkm7" path="res://Scripts/telescope_view.gd" id="1_u244v"]
+[ext_resource type="Texture2D" uid="uid://dj5s0eap36644" path="res://Sprites/Originais/vista.jpg" id="2_mpc83"]
+[ext_resource type="Shader" uid="uid://bvxh2b6ipy6lx" path="res://Scripts/telescope_view.gdshader" id="3_pjfli"]
+[ext_resource type="Script" uid="uid://b1i5bhywiv2in" path="res://Scripts/color_rect.gd" id="4_4ywfs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qwd6t"]
+shader = ExtResource("3_pjfli")
+shader_parameter/radius = 0.4
+shader_parameter/softness = 0.005
+
+[node name="TelescopeView" type="Node2D" unique_id=315595028]
+script = ExtResource("1_u244v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=136003510]
+position = Vector2(578, 324)
+
+[node name="Vista" type="Sprite2D" parent="." unique_id=281367154]
+position = Vector2(576.5, 329)
+scale = Vector2(3.2083333, 1.8055556)
+texture = ExtResource("2_mpc83")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1516361877]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=226670371]
+material = SubResource("ShaderMaterial_qwd6t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_4ywfs")
