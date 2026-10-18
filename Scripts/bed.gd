@@ -3,6 +3,8 @@ extends Node2D
 @onready var sleep_anim: AnimatedSprite2D = $PlayerSleepAnim
 @onready var interact_area: Area2D = $InteractionArea
 @onready var exit_point: Marker2D = $ExitPoint
+signal interagido
+@export var nome_item: String = "Item"
 
 var player_in_range: Node2D = null
 var is_occupied := false
@@ -26,6 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_get_up()
 	elif player_in_range:
 		_lay_down()
+		interagido.emit()
 
 func _lay_down() -> void:
 	busy = true
@@ -42,6 +45,7 @@ func _lay_down() -> void:
 	sleep_anim.play("lay_down")
 	await sleep_anim.animation_finished
 	busy = false
+	interagido.emit()
 
 func _get_up() -> void:
 	busy = true

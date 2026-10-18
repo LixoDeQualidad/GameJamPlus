@@ -157,9 +157,12 @@ position = Vector2(184, 192)
 
 [node name="bed" parent="." unique_id=1783714251 instance=ExtResource("16_xlyno")]
 position = Vector2(252.61336, 213.7871)
+nome_item = "Cama"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1896929564]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1896929564 node_paths=PackedStringArray("porta", "item_cama")]
 script = ExtResource("17_xlyno")
+porta = NodePath("../Door2")
+item_cama = NodePath("../bed")
 
 [node name="Painel" type="PanelContainer" parent="CanvasLayer" unique_id=1255154877]
 offset_right = 40.0

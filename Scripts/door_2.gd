@@ -1,5 +1,8 @@
 extends Node2D
 
+# Emitido quando o item (ex.: a pizza) aparece depois da porta abrir
+signal item_spawned(item: Node)
+
 @export var knock_interval: float = 3.0
 @export_multiline var dialog_text: String = "Vi que você pediu comida, o entregador estava lá embaixo esperando por você, 
 então eu peguei"
@@ -145,6 +148,7 @@ func _open_door() -> void:
 	item.modulate.a = 0.0
 	get_parent().add_child(item)
 	item.global_position = door_sprite.global_position + item_offset
+	item_spawned.emit(item)
 
 	npc_tween.parallel().tween_property(item, "modulate:a", 1.0, 0.3)
 

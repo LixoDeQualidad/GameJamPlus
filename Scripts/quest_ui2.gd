@@ -6,6 +6,9 @@ extends CanvasLayer
 # Item da pizza que completa a quest 1 (precisa ter o sinal "interagido")
 @export var item_pizza: Node
 
+# Porta que cria a pizza em tempo de jogo (sinal "item_spawned")
+@export var porta: Node
+
 # Item da cama que completa a quest 2 (precisa ter o sinal "interagido")
 @export var item_cama: Node
 
@@ -23,12 +26,13 @@ func _ready() -> void:
 	# Continua rodando mesmo com o jogo pausado
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-	# Quest 1: sinal da pizza
+	# Quest 1: sinal da pizza (já na cena ou criada pela porta)
 	if item_pizza:
-		if not item_pizza.interagido.is_connected(_on_pizza_interagida):
-			item_pizza.interagido.connect(_on_pizza_interagida)
-	else:
-		push_warning("item_pizza não foi definido no Inspector.")
+		_conectar_pizza(item_pizza)
+	if porta:
+		porta.item_spawned.connect(_conectar_pizza)
+	if not item_pizza and not porta:
+		push_warning("item_pizza ou porta precisa ser definido no Inspector.")
 
 	# Quest 2: sinal da cama
 	if item_cama:
@@ -40,6 +44,10 @@ func _ready() -> void:
 	_mostrar_quest(texto_pizza)
 
 # ---------- QUEST 1: COMER A PIZZA ----------
+
+func _conectar_pizza(pizza: Node) -> void:
+	if not pizza.interagido.is_connected(_on_pizza_interagida):
+		pizza.interagido.connect(_on_pizza_interagida)
 
 func _on_pizza_interagida() -> void:
 	if quest_atual != Quest.COMER_PIZZA:

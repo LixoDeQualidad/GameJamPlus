@@ -2,6 +2,7 @@ extends Area2D
 signal interagido
 
 @onready var dica: Label = $Label
+@export var nome_item: String = "Item"
 
 
 @export var dialogue_lines: Array[String] = [
@@ -43,6 +44,7 @@ func _process(_delta):
 		return
 
 	if player_in_range and Input.is_action_just_pressed("interact"):
+		interagido.emit()
 		if not is_talking:
 			_start_dialogue()
 			if not ja_interagido:
