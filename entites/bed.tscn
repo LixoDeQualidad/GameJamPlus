@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://br5ca6di6asrm"]
+
+[ext_resource type="Script" uid="uid://cp73sjsclkubh" path="res://Scripts/bed.gd" id="1_hdqup"]
+[ext_resource type="Texture2D" uid="uid://buny642ue0oyp" path="res://Sprites/Originais/bed.png" id="2_py1pt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_58nyq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": 0,
+"name": &"lay_down",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfyk3"]
+radius = 23.194826
+
+[node name="bed" type="Node2D" unique_id=1783714251]
+script = ExtResource("1_hdqup")
+
+[node name="Bed" type="Sprite2D" parent="." unique_id=1554177767]
+position = Vector2(4, -20)
+texture = ExtResource("2_py1pt")
+
+[node name="PlayerSleepAnim" type="AnimatedSprite2D" parent="." unique_id=2070302983]
+position = Vector2(4, -20)
+sprite_frames = SubResource("SpriteFrames_58nyq")
+animation = &"lay_down"
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=175228674]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1414432931]
+position = Vector2(3, 3)
+shape = SubResource("CircleShape2D_pfyk3")
+debug_color = Color(1, 1, 1, 0.23137255)
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=898251592]
+position = Vector2(3.8412247, -6.4136963)
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_body_exited"]

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://2ga7r7gvh1cj"]
+
+[ext_resource type="Texture2D" uid="uid://cvar2hj6wxo3x" path="res://Sprites/Originais/pixil-pizzabox.png" id="1_c0p47"]
+[ext_resource type="Script" uid="uid://c8ipl16mwy6ut" path="res://Scripts/pizza.gd" id="1_x2l5l"]
+[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="3_foj3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfyk3"]
+size = Vector2(18, 9)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfyk3"]
+radius = 17.029387
+
+[node name="Pizza" type="Area2D" unique_id=802768416]
+script = ExtResource("1_x2l5l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2088499041]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_pfyk3")
+
+[node name="PixilPizzabox" type="Sprite2D" parent="." unique_id=978889364]
+position = Vector2(-1, 5)
+scale = Vector2(0.42, 0.4)
+texture = ExtResource("1_c0p47")
+
+[node name="interactionArea" type="Area2D" parent="." unique_id=1010368588]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactionArea" unique_id=402813126]
+shape = SubResource("CircleShape2D_pfyk3")
+debug_color = Color(1, 1, 1, 0.13725491)
+
+[node name="Label" type="Label" parent="." unique_id=370557987]
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 15.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_foj3j")
+theme_override_font_sizes/font_size = 6
+text = "comer?"
+
+[connection signal="body_entered" from="interactionArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="interactionArea" to="." method="_on_body_exited"]
