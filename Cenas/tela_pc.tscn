@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://chphgb6utg5gs" path="res://Scripts/tela_pc.gd" id="1_d1kcw"]
 [ext_resource type="Texture2D" uid="uid://w1lmsfgbtomd" path="res://Sprites/Originais/images.jpg" id="1_rx0vj"]
+[ext_resource type="Texture2D" uid="uid://dsd6vnxspkfax" path="res://Sprites/Originais/pixil-logo-food.png" id="3_e63rd"]
 
 [node name="TelaPc" type="CanvasLayer" unique_id=2080619803]
 script = ExtResource("1_d1kcw")
@@ -26,12 +27,14 @@ offset_bottom = 86.0
 text = "App2"
 
 [node name="Button" type="Button" parent="." unique_id=106641852]
-offset_left = 27.0
-offset_top = 27.0
-offset_right = 74.0
-offset_bottom = 85.0
-text = "app1
+offset_left = 30.0
+offset_top = 19.0
+offset_right = 92.0
+offset_bottom = 77.0
+text = "
 "
+icon = ExtResource("3_e63rd")
+flat = true
 
 [node name="Button3" type="Button" parent="." unique_id=119503968]
 offset_left = 257.0

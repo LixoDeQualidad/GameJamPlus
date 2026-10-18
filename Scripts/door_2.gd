@@ -5,7 +5,7 @@ extends Node2D
 então eu peguei"
 @export var chars_per_second: float = 30.0
 @export var pitch_variation: float = 0.1
-@export var open_door_texture: Texture2D
+@export var npc_scene: PackedScene
 
 @onready var knock_sound: AudioStreamPlayer2D = $KnockSound
 @onready var talk_sound: AudioStreamPlayer2D = $PeepholeUI/TalkSound
@@ -16,6 +16,8 @@ então eu peguei"
 @onready var dialog_label: Label = $PeepholeUI/Panel/Label
 @onready var peephole_image: Sprite2D = $PeepholeUI/PeepholeImage
 @onready var door_sprite: Sprite2D = $DoorSprite
+@export var item_scene: PackedScene
+@export var item_offset: Vector2 = Vector2(0, 2)
 
 var player_in_range := false
 var peeking := false
@@ -112,10 +114,39 @@ func _close_peephole() -> void:
 
 func _open_door() -> void:
 	door_opened = true
-	door_sprite.texture = open_door_texture
 	icon.hide()
 	knock_timer.stop()
 	area.set_deferred("monitoring", false)
+
+	# Porta some com fade
+	var tween := create_tween()
+	tween.tween_property(door_sprite, "modulate:a", 0.0, 0.3)
+	await tween.finished
+	door_sprite.hide()
+
+	# NPC aparece no lugar da porta
+	if npc_scene == null:
+		push_warning("npc_scene não foi definida no Inspector da porta!")
+		return
+
+	var npc := npc_scene.instantiate()
+	npc.modulate.a = 0.0
+	get_parent().add_child(npc)
+	npc.global_position = door_sprite.global_position
+
+	var npc_tween := create_tween()
+	npc_tween.tween_property(npc, "modulate:a", 1.0, 0.3)
+	
+	if item_scene == null:
+		push_warning("item_scene não foi definida no Inspector da porta!")
+		return
+
+	var item := item_scene.instantiate()
+	item.modulate.a = 0.0
+	get_parent().add_child(item)
+	item.global_position = door_sprite.global_position + item_offset
+
+	npc_tween.parallel().tween_property(item, "modulate:a", 1.0, 0.3)
 
 
 func _on_body_entered(body: Node2D) -> void:

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cscqlfs4x4e5v" path="res://Scripts/teclado.gd" id="1_vorkm"]
 [ext_resource type="Texture2D" uid="uid://cul7bf4errfr1" path="res://Sprites/Originais/teclado.png" id="2_6b0hc"]
-[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://retro-gaming/Retro Gaming.ttf" id="3_6b0hc"]
+[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="3_6b0hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
 size = Vector2(15, 6)

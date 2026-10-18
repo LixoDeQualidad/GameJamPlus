@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfanrqnbe78sy" path="res://Scripts/poster.gd" id="1_ld5fk"]
 [ext_resource type="Texture2D" uid="uid://ceb3rnhns4g7x" path="res://Sprites/Originais/poster.png" id="2_crhat"]
-[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://retro-gaming/Retro Gaming.ttf" id="3_1iqxl"]
+[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="3_1iqxl"]
 [ext_resource type="Texture2D" uid="uid://dp8kg6nepuip6" path="res://Sprites/Originais/PosterAberto.png" id="3_crhat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvf33"]

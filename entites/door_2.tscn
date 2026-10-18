@@ -5,13 +5,20 @@
 [ext_resource type="AudioStream" uid="uid://c0tw8aiw2ah27" path="res://audios/KnotDoor.mp3" id="3_lrxva"]
 [ext_resource type="Texture2D" uid="uid://dedsadlr4lbmq" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/DoorClosed.png" id="5_3cdqv"]
 [ext_resource type="AudioStream" uid="uid://u5qhvdxyevib" path="res://audios/voz-namorada.mp3" id="5_axcxc"]
-[ext_resource type="Texture2D" uid="uid://cmkp0scu1sddy" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/DoorOpend.png" id="6_lrxva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfyk3"]
+size = Vector2(16, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
 radius = 18.0
 
 [node name="Door2" type="Node2D" unique_id=1668443894]
 script = ExtResource("1_osht8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=570268613]
+position = Vector2(8, 6.5)
+shape = SubResource("RectangleShape2D_pfyk3")
+one_way_collision = true
 
 [node name="KnockSound" type="AudioStreamPlayer2D" parent="." unique_id=601190414]
 stream = ExtResource("3_lrxva")
@@ -63,8 +70,3 @@ stream = ExtResource("5_axcxc")
 [node name="DoorSprite" type="Sprite2D" parent="." unique_id=1370145707]
 position = Vector2(8, 6)
 texture = ExtResource("5_3cdqv")
-
-[node name="DoorOpend" type="Sprite2D" parent="." unique_id=1159968]
-visible = false
-position = Vector2(8, 6)
-texture = ExtResource("6_lrxva")

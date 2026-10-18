@@ -4,7 +4,6 @@
 [ext_resource type="AudioStream" uid="uid://cugfhdb0wjwwq" path="res://audios/voz-protagonista2.mp3" id="2_c1rb0"]
 [ext_resource type="Texture2D" uid="uid://c58w14ofiaujb" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="2_lb4q3"]
 [ext_resource type="PackedScene" uid="uid://cduh5tu1h2loj" path="res://entites/player.tscn" id="3_u4o0i"]
-[ext_resource type="Texture2D" uid="uid://buny642ue0oyp" path="res://Sprites/Originais/bed.png" id="5_xlyno"]
 [ext_resource type="PackedScene" uid="uid://bqeidnn8grky0" path="res://entites/telescope.tscn" id="6_r2sbh"]
 [ext_resource type="PackedScene" uid="uid://d03hkyxrvcip5" path="res://entites/pc.tscn" id="7_m1yer"]
 [ext_resource type="Script" uid="uid://bdb1opr6h4rii" path="res://Scripts/DialogueBox.gd" id="9_t4cjs"]
@@ -14,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://dv1cy3bnasqit" path="res://entites/poster.tscn" id="13_fl5aa"]
 [ext_resource type="Texture2D" uid="uid://cmkp0scu1sddy" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/DoorOpend.png" id="13_lb4q3"]
 [ext_resource type="PackedScene" uid="uid://cguune0a8c8ah" path="res://entites/door_2.tscn" id="13_lv6dg"]
+[ext_resource type="PackedScene" uid="uid://cvi7ty40c0k1p" path="res://entites/NpcEla.tscn" id="15_u4o0i"]
+[ext_resource type="PackedScene" uid="uid://2ga7r7gvh1cj" path="res://entites/pizza.tscn" id="16_fp8xn"]
+[ext_resource type="PackedScene" uid="uid://br5ca6di6asrm" path="res://entites/bed.tscn" id="16_xlyno"]
+[ext_resource type="Script" uid="uid://bslen7qar8bax" path="res://Scripts/quest_ui2.gd" id="17_xlyno"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_peul3"]
 texture = ExtResource("1_lv6dg")
@@ -52,6 +55,13 @@ sources/1 = SubResource("TileSetAtlasSource_vwlyl")
 
 [node name="roomDia1Pt2" type="Node2D" unique_id=624446248]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=732651617]
+offset_left = 64.0
+offset_top = 71.0
+offset_right = 441.0
+offset_bottom = 281.0
+color = Color(0, 0, 0, 1)
+
 [node name="DialogueBox" type="CanvasLayer" parent="." unique_id=1898588274]
 visible = false
 script = ExtResource("9_t4cjs")
@@ -86,10 +96,6 @@ position = Vector2(254, 127)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=129747678]
 position = Vector2(247, 169)
 zoom = Vector2(4, 4)
-
-[node name="Bed" type="Sprite2D" parent="." unique_id=2003395905]
-position = Vector2(250, 192)
-texture = ExtResource("5_xlyno")
 
 [node name="Telescope" parent="." unique_id=1345883108 instance=ExtResource("6_r2sbh")]
 position = Vector2(172, 211)
@@ -143,6 +149,27 @@ texture = ExtResource("13_lb4q3")
 
 [node name="Door2" parent="." unique_id=1668443894 instance=ExtResource("13_lv6dg")]
 position = Vector2(176, 98)
+npc_scene = ExtResource("15_u4o0i")
+item_scene = ExtResource("16_fp8xn")
+
+[node name="destinoNPC" type="Marker2D" parent="." unique_id=156379998]
+position = Vector2(184, 192)
+
+[node name="bed" parent="." unique_id=1783714251 instance=ExtResource("16_xlyno")]
+position = Vector2(252.61336, 213.7871)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1896929564]
+script = ExtResource("17_xlyno")
+
+[node name="Painel" type="PanelContainer" parent="CanvasLayer" unique_id=1255154877]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Margem" type="MarginContainer" parent="CanvasLayer/Painel" unique_id=845089075]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Painel/Margem" unique_id=40124130]
+layout_mode = 2
 
 [connection signal="pressed" from="PauseMenu/ButtonContinuar" to="PauseMenu" method="_on_button_continuar_pressed"]
 [connection signal="pressed" from="PauseMenu/ButtonSair" to="PauseMenu" method="_on_btn_sair_pressed"]

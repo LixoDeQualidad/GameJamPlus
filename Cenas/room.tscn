@@ -5,16 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://c58w14ofiaujb" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="2_a1twj"]
 [ext_resource type="PackedScene" uid="uid://cduh5tu1h2loj" path="res://entites/player.tscn" id="3_qsu18"]
 [ext_resource type="AudioStream" uid="uid://cugfhdb0wjwwq" path="res://audios/voz-protagonista2.mp3" id="3_vehx5"]
-[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://retro-gaming/Retro Gaming.ttf" id="4_8kejc"]
+[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="4_8kejc"]
 [ext_resource type="PackedScene" uid="uid://b3b04uxa3nwbt" path="res://entites/door.tscn" id="4_sfgmp"]
-[ext_resource type="Texture2D" uid="uid://buny642ue0oyp" path="res://Sprites/Originais/bed.png" id="5_a1twj"]
 [ext_resource type="PackedScene" uid="uid://bqeidnn8grky0" path="res://entites/telescope.tscn" id="6_qsu18"]
 [ext_resource type="PackedScene" uid="uid://d03hkyxrvcip5" path="res://entites/pc.tscn" id="7_sfgmp"]
-[ext_resource type="PackedScene" uid="uid://bwqa7tq425pq0" path="res://entites/ela.tscn" id="8_px6d0"]
 [ext_resource type="Script" uid="uid://bdb1opr6h4rii" path="res://Scripts/DialogueBox.gd" id="9_t3whl"]
 [ext_resource type="Script" uid="uid://cuws1yhdns63g" path="res://Scripts/pause_menu.gd" id="11_t3whl"]
 [ext_resource type="PackedScene" uid="uid://blblp7jlvvpw6" path="res://entites/teclado.tscn" id="13_qbk1c"]
 [ext_resource type="Script" uid="uid://b0xhu771v3lv6" path="res://Scripts/quest_ui.gd" id="15_8kejc"]
+[ext_resource type="PackedScene" uid="uid://br5ca6di6asrm" path="res://entites/bed.tscn" id="15_rono1"]
 [ext_resource type="PackedScene" uid="uid://dv1cy3bnasqit" path="res://entites/poster.tscn" id="15_vehx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vehx5"]
@@ -54,6 +53,13 @@ sources/1 = SubResource("TileSetAtlasSource_8kejc")
 
 [node name="RoomDia1" type="Node2D" unique_id=662619707]
 script = ExtResource("1_cp311")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=961616117]
+offset_left = 88.0
+offset_top = 75.0
+offset_right = 394.0
+offset_bottom = 258.0
+color = Color(0, 0, 0, 1)
 
 [node name="DialogueBox" type="CanvasLayer" parent="." unique_id=1945383418]
 visible = false
@@ -96,18 +102,11 @@ zoom = Vector2(4, 4)
 [node name="Door" parent="." unique_id=1595480160 instance=ExtResource("4_sfgmp")]
 position = Vector2(176, 96)
 
-[node name="Bed" type="Sprite2D" parent="." unique_id=1961618425]
-position = Vector2(250, 192)
-texture = ExtResource("5_a1twj")
-
 [node name="Telescope" parent="." unique_id=1345883108 instance=ExtResource("6_qsu18")]
 position = Vector2(172, 211)
 
 [node name="pc" parent="." unique_id=54256555 instance=ExtResource("7_sfgmp")]
 position = Vector2(251, 107)
-
-[node name="Ela1" parent="." unique_id=1543456910 instance=ExtResource("8_px6d0")]
-position = Vector2(283.32904, 212.11125)
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1545255749]
 visible = false
@@ -160,6 +159,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/Painel/Margem" unique_id=2143712814]
 layout_mode = 2
+
+[node name="bed" parent="." unique_id=1783714251 instance=ExtResource("15_rono1")]
+position = Vector2(241, 213)
 
 [connection signal="pressed" from="PauseMenu/ButtonContinuar" to="PauseMenu" method="_on_button_continuar_pressed"]
 [connection signal="pressed" from="PauseMenu/ButtonSair" to="PauseMenu" method="_on_btn_sair_pressed"]
