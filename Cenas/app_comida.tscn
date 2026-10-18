@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://cuymw7j2dfqm3"]
+
+[ext_resource type="Script" uid="uid://rccukj0lwk7r" path="res://Scripts/app_comida.gd" id="1_8wbpi"]
+
+[node name="AppComida" type="Control" unique_id=397097270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8wbpi")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=662193286]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.09, 0.13, 0.2, 1)
+
+[node name="Centro" type="CenterContainer" parent="." unique_id=1473028761]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Janela" type="PanelContainer" parent="Centro" unique_id=1632641376]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(920, 520)
+layout_mode = 2
+
+[node name="Margem" type="MarginContainer" parent="Centro/Janela" unique_id=717791584]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 12
+
+[node name="Raiz" type="VBoxContainer" parent="Centro/Janela/Margem" unique_id=457029685]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BarraTitulo" type="HBoxContainer" parent="Centro/Janela/Margem/Raiz" unique_id=393403723]
+layout_mode = 2
+
+[node name="Titulo" type="Label" parent="Centro/Janela/Margem/Raiz/BarraTitulo" unique_id=57064310]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🍔 PedeAí - Delivery"
+
+[node name="BtnFechar" type="Button" parent="Centro/Janela/Margem/Raiz/BarraTitulo" unique_id=113374212]
+unique_name_in_owner = true
+layout_mode = 2
+text = " X "
+
+[node name="Linha" type="HSeparator" parent="Centro/Janela/Margem/Raiz" unique_id=1412027210]
+layout_mode = 2
+
+[node name="Conteudo" type="HBoxContainer" parent="Centro/Janela/Margem/Raiz" unique_id=1107902103]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="ColunaMenu" type="VBoxContainer" parent="Centro/Janela/Margem/Raiz/Conteudo" unique_id=25850062]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 8
+
+[node name="Categorias" type="HBoxContainer" parent="Centro/Janela/Margem/Raiz/Conteudo/ColunaMenu" unique_id=1776140723]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Scroll" type="ScrollContainer" parent="Centro/Janela/Margem/Raiz/Conteudo/ColunaMenu" unique_id=572164905]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Grade" type="GridContainer" parent="Centro/Janela/Margem/Raiz/Conteudo/ColunaMenu/Scroll" unique_id=486465290]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="PainelCarrinho" type="PanelContainer" parent="Centro/Janela/Margem/Raiz/Conteudo" unique_id=1638974035]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(290, 0)
+layout_mode = 2
+
+[node name="ColunaCarrinho" type="VBoxContainer" parent="Centro/Janela/Margem/Raiz/Conteudo/PainelCarrinho" unique_id=809296632]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TituloCarrinho" type="Label" parent="Centro/Janela/Margem/Raiz/Conteudo/PainelCarrinho/ColunaCarrinho" unique_id=582326198]
+layout_mode = 2
+text = "🛒 Seu pedido"
+
+[node name="ScrollCarrinho" type="ScrollContainer" parent="Centro/Janela/Margem/Raiz/Conteudo/PainelCarrinho/ColunaCarrinho" unique_id=405587818]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ListaCarrinho" type="VBoxContainer" parent="Centro/Janela/Margem/Raiz/Conteudo/PainelCarrinho/ColunaCarrinho/ScrollCarrinho" unique_id=898593730]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Total" type="Label" parent="Centro/Janela/Margem/Raiz/Conteudo/PainelCarrinho/ColunaCarrinho" unique_id=746985830]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Total: R$ 0.00"
+
+[node name="BtnPedir" type="Button" parent="Centro/Janela/Margem/Raiz/Conteudo/PainelCarrinho/ColunaCarrinho" unique_id=1094296476]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Finalizar pedido"
+
+[node name="Status" type="Label" parent="Centro/Janela/Margem/Raiz" unique_id=306966868]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Taskbar" type="PanelContainer" parent="." unique_id=325243569]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BarraTask" type="HBoxContainer" parent="Taskbar" unique_id=1310163495]
+layout_mode = 2
+
+[node name="Iniciar" type="Label" parent="Taskbar/BarraTask" unique_id=780459589]
+layout_mode = 2
+text = "⊞  Iniciar"
+
+[node name="Espaco" type="Control" parent="Taskbar/BarraTask" unique_id=474700088]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Relogio" type="Label" parent="Taskbar/BarraTask" unique_id=1641526232]
+unique_name_in_owner = true
+layout_mode = 2
+text = "12:00"
+
+[node name="Confirmacao" type="ColorRect" parent="." unique_id=869600737]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="CentroConf" type="CenterContainer" parent="Confirmacao" unique_id=350728973]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PainelConf" type="PanelContainer" parent="Confirmacao/CentroConf" unique_id=1391066379]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MargemConf" type="MarginContainer" parent="Confirmacao/CentroConf/PainelConf" unique_id=762645205]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="ColConf" type="VBoxContainer" parent="Confirmacao/CentroConf/PainelConf/MargemConf" unique_id=1228483704]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LblConf" type="Label" parent="Confirmacao/CentroConf/PainelConf/MargemConf/ColConf" unique_id=914925075]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pedido enviado!"
+horizontal_alignment = 1
+
+[node name="BtnOk" type="Button" parent="Confirmacao/CentroConf/PainelConf/MargemConf/ColConf" unique_id=118539381]
+unique_name_in_owner = true
+layout_mode = 2
+text = "OK"

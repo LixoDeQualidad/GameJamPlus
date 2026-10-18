@@ -5,7 +5,7 @@ const GAME_MUSIC = preload("res://audios/musica2.mp3")
 
 const FADE_DURATION := 1.5 # segundos
 const MAX_VOLUME_DB := 0.0
-const MIN_VOLUME_DB := -200.0
+const MIN_VOLUME_DB := -60.0 # com -200 o fade ficava mudo quase o tempo todo
 
 var player_a: AudioStreamPlayer
 var player_b: AudioStreamPlayer

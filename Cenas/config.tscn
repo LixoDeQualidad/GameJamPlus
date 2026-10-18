@@ -41,9 +41,9 @@ text = "Efeitos Sonoros"
 [node name="SFXSlider" type="HSlider" parent="VBoxContainer/HBoxContainer" unique_id=2062874755]
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
-min_value = 100.0
-max_value = 1000.0
-value = 100.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 ticks_position = 3
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=736266803]
@@ -65,6 +65,9 @@ text = "Musica"
 custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 theme_override_constants/grabber_offset = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=1185356987]
 layout_mode = 0

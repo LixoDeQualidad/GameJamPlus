@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var dica: Label = $Label
 
 @export var dialogue_lines: Array[String] = [
 	"Aaaaaaaaaaaaaaaaaaaaaa",
@@ -13,17 +14,22 @@ var player_in_range := false
 var dialogue_index := 0
 var is_talking := false
 
-@onready var dialogue_box = get_node("/root/RoomDia1/Ela1/DialogueBox")# ajuste o caminho
+@onready var dialogue_box = get_node("/root/RoomDia1/DialogueBox")# ajuste o caminho
+
+func _ready() -> void:
+	dica.visible = false
 
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
 		player_in_range = true
+		dica.visible = true
 
 func _on_body_exited(body):
 	if body.is_in_group("Player"):
 		player_in_range = false
 		_end_dialogue()
+		dica.visible = false
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):

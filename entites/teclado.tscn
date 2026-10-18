@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://blblp7jlvvpw6"]
+
+[ext_resource type="Script" uid="uid://cscqlfs4x4e5v" path="res://Scripts/teclado.gd" id="1_vorkm"]
+[ext_resource type="Texture2D" uid="uid://cul7bf4errfr1" path="res://Sprites/Originais/teclado.png" id="2_6b0hc"]
+[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://retro-gaming/Retro Gaming.ttf" id="3_6b0hc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebum8"]
+size = Vector2(15, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
+radius = 23.194826
+
+[node name="teclado" type="Area2D" unique_id=1564343803 groups=["item_quest"]]
+script = ExtResource("1_vorkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=924512385]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_ebum8")
+
+[node name="Teclado" type="Sprite2D" parent="." unique_id=130966809]
+position = Vector2(0, -1)
+texture = ExtResource("2_6b0hc")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=970111983]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=914600008]
+shape = SubResource("CircleShape2D_ebum8")
+debug_color = Color(1, 1, 1, 0.13333334)
+
+[node name="Label" type="Label" parent="." unique_id=290207793]
+offset_left = -17.0
+offset_top = -14.0
+offset_right = 18.0
+offset_bottom = -6.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_6b0hc")
+theme_override_font_sizes/font_size = 4
+text = "meu  teclado"
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_body_exited"]

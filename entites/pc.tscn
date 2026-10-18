@@ -3,21 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://do3wcxfwjp3er" path="res://Sprites/Originais/pc.png" id="1_gqhp3"]
 [ext_resource type="Script" uid="uid://beoxpfd03abaa" path="res://Scripts/pc.gd" id="1_thc4q"]
 [ext_resource type="PackedScene" uid="uid://c4scs0i7viqs1" path="res://Cenas/tela_pc.tscn" id="2_7w8w8"]
+[ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://retro-gaming/Retro Gaming.ttf" id="4_vhqh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvf33"]
 size = Vector2(16, 14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
-radius = 27.018513
+radius = 23.194826
 
-[node name="pc" type="Area2D" unique_id=54256555]
+[node name="pc" type="Area2D" unique_id=54256555 groups=["item_quest"]]
 script = ExtResource("1_thc4q")
 tela_scene = ExtResource("2_7w8w8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2075915694]
 position = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_xvf33")
-one_way_collision = true
 
 [node name="Pc" type="Sprite2D" parent="." unique_id=1938774633]
 position = Vector2(1, 2)
@@ -29,6 +29,16 @@ texture = ExtResource("1_gqhp3")
 position = Vector2(1, 3)
 shape = SubResource("CircleShape2D_ebum8")
 debug_color = Color(1, 1, 1, 0.07058824)
+
+[node name="Label" type="Label" parent="." unique_id=2060485827]
+offset_left = -15.0
+offset_top = -12.0
+offset_right = 28.0
+offset_bottom = 11.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_vhqh3")
+theme_override_font_sizes/font_size = 4
+text = "Amo  meu  pc"
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_body_exited"]

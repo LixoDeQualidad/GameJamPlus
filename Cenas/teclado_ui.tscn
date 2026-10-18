@@ -1,0 +1,427 @@
+[gd_scene format=3 uid="uid://bfjtk64hsqk6k"]
+
+[ext_resource type="Script" uid="uid://b637o1sa4mhrp" path="res://Scripts/teclado_ui.gd" id="1_tui"]
+[ext_resource type="Texture2D" uid="uid://cnvqakhpuu1e7" path="res://Sprites/Originais/tecladoUI.png" id="2_5il12"]
+[ext_resource type="AudioStream" uid="uid://cjwtsek58do71" path="res://audios/teclado.mp3" id="3_f8fpj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vazio"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+bg_color = Color(1, 1, 0.5, 0.25)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+bg_color = Color(1, 0.8, 0.2, 0.5)
+
+[sub_resource type="Theme" id="Theme_teclas"]
+Button/styles/focus = SubResource("StyleBoxEmpty_vazio")
+Button/styles/hover = SubResource("StyleBoxFlat_hover")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_pressed")
+Button/styles/normal = SubResource("StyleBoxEmpty_vazio")
+Button/styles/pressed = SubResource("StyleBoxFlat_pressed")
+
+[node name="TecladoUI" type="CanvasLayer" unique_id=1949021558]
+layer = 10
+script = ExtResource("1_tui")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=286921456]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Teclado" type="TextureRect" parent="." unique_id=1631721679]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -575.0
+offset_top = -192.0
+offset_right = 576.0
+offset_bottom = 322.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5il12")
+expand_mode = 1
+
+[node name="Teclas" type="Control" parent="Teclado" unique_id=1035499602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_teclas")
+
+[node name="Tecla01" type="Button" parent="Teclado/Teclas" unique_id=528131616]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 412.0
+offset_right = 32.0
+offset_bottom = 515.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla02" type="Button" parent="Teclado/Teclas" unique_id=1806014240]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 291.0
+offset_right = 43.0
+offset_bottom = 411.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla03" type="Button" parent="Teclado/Teclas" unique_id=1230415787]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 412.0
+offset_right = 71.0
+offset_bottom = 516.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla04" type="Button" parent="Teclado/Teclas" unique_id=1761172051]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 290.0
+offset_right = 86.0
+offset_bottom = 411.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla05" type="Button" parent="Teclado/Teclas" unique_id=524021789]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 410.0
+offset_right = 114.0
+offset_bottom = 516.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla06" type="Button" parent="Teclado/Teclas" unique_id=912841430]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 410.0
+offset_right = 155.0
+offset_bottom = 514.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla07" type="Button" parent="Teclado/Teclas" unique_id=1904835524]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 289.0
+offset_right = 169.0
+offset_bottom = 408.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla08" type="Button" parent="Teclado/Teclas" unique_id=633420744]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 411.0
+offset_right = 198.0
+offset_bottom = 514.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla09" type="Button" parent="Teclado/Teclas" unique_id=767868925]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 281.0
+offset_right = 211.0
+offset_bottom = 411.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla10" type="Button" parent="Teclado/Teclas" unique_id=1854418686]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 412.0
+offset_right = 241.0
+offset_bottom = 514.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla11" type="Button" parent="Teclado/Teclas" unique_id=1541894988]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 285.0
+offset_right = 251.0
+offset_bottom = 410.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla12" type="Button" parent="Teclado/Teclas" unique_id=233746778]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 410.0
+offset_right = 281.0
+offset_bottom = 512.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla13" type="Button" parent="Teclado/Teclas" unique_id=1691482790]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 411.0
+offset_right = 320.0
+offset_bottom = 512.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla14" type="Button" parent="Teclado/Teclas" unique_id=392021427]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 289.0
+offset_right = 335.0
+offset_bottom = 410.0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Tecla15" type="Button" parent="Teclado/Teclas" unique_id=979588735]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 412.0
+offset_right = 363.0
+offset_bottom = 514.0
+
+[node name="Tecla16" type="Button" parent="Teclado/Teclas" unique_id=1714252942]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 288.0
+offset_right = 378.0
+offset_bottom = 411.0
+
+[node name="Tecla17" type="Button" parent="Teclado/Teclas" unique_id=443713671]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 411.0
+offset_right = 405.0
+offset_bottom = 516.0
+
+[node name="Tecla18" type="Button" parent="Teclado/Teclas" unique_id=1289722362]
+layout_mode = 0
+offset_left = 405.0
+offset_top = 412.0
+offset_right = 447.0
+offset_bottom = 514.0
+
+[node name="Tecla19" type="Button" parent="Teclado/Teclas" unique_id=923362124]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 286.0
+offset_right = 462.0
+offset_bottom = 410.0
+
+[node name="Tecla20" type="Button" parent="Teclado/Teclas" unique_id=1123338290]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 411.0
+offset_right = 491.0
+offset_bottom = 513.0
+
+[node name="Tecla21" type="Button" parent="Teclado/Teclas" unique_id=1250663284]
+layout_mode = 0
+offset_left = 477.0
+offset_top = 286.0
+offset_right = 503.0
+offset_bottom = 412.0
+
+[node name="Tecla22" type="Button" parent="Teclado/Teclas" unique_id=1537956318]
+layout_mode = 0
+offset_left = 493.0
+offset_top = 411.0
+offset_right = 533.0
+offset_bottom = 513.0
+
+[node name="Tecla23" type="Button" parent="Teclado/Teclas" unique_id=235399611]
+layout_mode = 0
+offset_left = 519.0
+offset_top = 288.0
+offset_right = 543.0
+offset_bottom = 410.0
+
+[node name="Tecla24" type="Button" parent="Teclado/Teclas" unique_id=1167923596]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 412.0
+offset_right = 572.0
+offset_bottom = 513.0
+
+[node name="Tecla25" type="Button" parent="Teclado/Teclas" unique_id=1117035924]
+layout_mode = 0
+offset_left = 575.0
+offset_top = 409.0
+offset_right = 613.0
+offset_bottom = 514.0
+
+[node name="Tecla26" type="Button" parent="Teclado/Teclas" unique_id=629482820]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 289.0
+offset_right = 625.0
+offset_bottom = 410.0
+
+[node name="Tecla27" type="Button" parent="Teclado/Teclas" unique_id=1241607242]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 411.0
+offset_right = 654.0
+offset_bottom = 514.0
+
+[node name="Tecla28" type="Button" parent="Teclado/Teclas" unique_id=1642752633]
+layout_mode = 0
+offset_left = 645.0
+offset_top = 286.0
+offset_right = 668.0
+offset_bottom = 411.0
+
+[node name="Tecla29" type="Button" parent="Teclado/Teclas" unique_id=974551016]
+layout_mode = 0
+offset_left = 657.0
+offset_top = 411.0
+offset_right = 698.0
+offset_bottom = 514.0
+
+[node name="Tecla30" type="Button" parent="Teclado/Teclas" unique_id=607386555]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 411.0
+offset_right = 739.0
+offset_bottom = 516.0
+
+[node name="Tecla31" type="Button" parent="Teclado/Teclas" unique_id=612785896]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 289.0
+offset_right = 753.0
+offset_bottom = 412.0
+
+[node name="Tecla32" type="Button" parent="Teclado/Teclas" unique_id=1034240314]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 412.0
+offset_right = 780.0
+offset_bottom = 517.0
+
+[node name="Tecla33" type="Button" parent="Teclado/Teclas" unique_id=1284969185]
+layout_mode = 0
+offset_left = 767.0
+offset_top = 287.0
+offset_right = 792.0
+offset_bottom = 412.0
+
+[node name="Tecla34" type="Button" parent="Teclado/Teclas" unique_id=1476185613]
+layout_mode = 0
+offset_left = 781.0
+offset_top = 411.0
+offset_right = 819.0
+offset_bottom = 514.0
+
+[node name="Tecla35" type="Button" parent="Teclado/Teclas" unique_id=962618045]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 288.0
+offset_right = 833.0
+offset_bottom = 411.0
+
+[node name="Tecla36" type="Button" parent="Teclado/Teclas" unique_id=1364590709]
+layout_mode = 0
+offset_left = 820.0
+offset_top = 411.0
+offset_right = 862.0
+offset_bottom = 513.0
+
+[node name="Tecla37" type="Button" parent="Teclado/Teclas" unique_id=1222239194]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 411.0
+offset_right = 904.0
+offset_bottom = 515.0
+
+[node name="Tecla38" type="Button" parent="Teclado/Teclas" unique_id=1010875444]
+layout_mode = 0
+offset_left = 895.0
+offset_top = 287.0
+offset_right = 918.0
+offset_bottom = 411.0
+
+[node name="Tecla39" type="Button" parent="Teclado/Teclas" unique_id=839575341]
+layout_mode = 0
+offset_left = 907.0
+offset_top = 412.0
+offset_right = 946.0
+offset_bottom = 516.0
+
+[node name="Tecla40" type="Button" parent="Teclado/Teclas" unique_id=1121680901]
+layout_mode = 0
+offset_left = 936.0
+offset_top = 288.0
+offset_right = 959.0
+offset_bottom = 412.0
+
+[node name="Tecla41" type="Button" parent="Teclado/Teclas" unique_id=1736005555]
+layout_mode = 0
+offset_left = 948.0
+offset_top = 411.0
+offset_right = 988.0
+offset_bottom = 515.0
+
+[node name="Tecla42" type="Button" parent="Teclado/Teclas" unique_id=829264953]
+layout_mode = 0
+offset_left = 990.0
+offset_top = 411.0
+offset_right = 1030.0
+offset_bottom = 515.0
+
+[node name="Tecla43" type="Button" parent="Teclado/Teclas" unique_id=660180003]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 288.0
+offset_right = 1043.0
+offset_bottom = 412.0
+
+[node name="Tecla44" type="Button" parent="Teclado/Teclas" unique_id=685344831]
+layout_mode = 0
+offset_left = 1033.0
+offset_top = 411.0
+offset_right = 1074.0
+offset_bottom = 517.0
+
+[node name="Tecla45" type="Button" parent="Teclado/Teclas" unique_id=1461439437]
+layout_mode = 0
+offset_left = 1059.0
+offset_top = 288.0
+offset_right = 1083.0
+offset_bottom = 411.0
+
+[node name="Tecla46" type="Button" parent="Teclado/Teclas" unique_id=765763019]
+layout_mode = 0
+offset_left = 1076.0
+offset_top = 412.0
+offset_right = 1111.0
+offset_bottom = 517.0
+
+[node name="Tecla47" type="Button" parent="Teclado/Teclas" unique_id=769807386]
+layout_mode = 0
+offset_left = 1101.0
+offset_top = 287.0
+offset_right = 1124.0
+offset_bottom = 411.0
+
+[node name="Tecla48" type="Button" parent="Teclado/Teclas" unique_id=966267895]
+layout_mode = 0
+offset_left = 1114.0
+offset_top = 414.0
+offset_right = 1146.0
+offset_bottom = 514.0
+
+[node name="Som" type="AudioStreamPlayer" parent="." unique_id=52958523]
+stream = ExtResource("3_f8fpj")
+max_polyphony = 4

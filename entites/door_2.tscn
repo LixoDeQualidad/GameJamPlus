@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cguune0a8c8ah"]
+
+[ext_resource type="Script" uid="uid://byyiojx8m8qeh" path="res://Scripts/door_2.gd" id="1_osht8"]
+[ext_resource type="Texture2D" uid="uid://bc6nfg337tbuw" path="res://Sprites/Originais/olhoMagico.jpg" id="3_3cdqv"]
+[ext_resource type="AudioStream" uid="uid://c0tw8aiw2ah27" path="res://audios/KnotDoor.mp3" id="3_lrxva"]
+[ext_resource type="Texture2D" uid="uid://dedsadlr4lbmq" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/DoorClosed.png" id="5_3cdqv"]
+[ext_resource type="AudioStream" uid="uid://u5qhvdxyevib" path="res://audios/voz-namorada.mp3" id="5_axcxc"]
+[ext_resource type="Texture2D" uid="uid://cmkp0scu1sddy" path="res://Sprites/Sprout Lands - Sprites - Basic pack/Sprout Lands - Sprites - Basic pack/Tilesets/DoorOpend.png" id="6_lrxva"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
+radius = 18.0
+
+[node name="Door2" type="Node2D" unique_id=1668443894]
+script = ExtResource("1_osht8")
+
+[node name="KnockSound" type="AudioStreamPlayer2D" parent="." unique_id=601190414]
+stream = ExtResource("3_lrxva")
+
+[node name="KnockTimer" type="Timer" parent="." unique_id=1585239456]
+
+[node name="Icon" type="Label" parent="." unique_id=986353129]
+offset_left = 7.0
+offset_top = -9.0
+offset_right = 10.0
+offset_bottom = 3.0
+theme_override_colors/font_color = Color(0.98762864, 0, 0.121233486, 1)
+theme_override_font_sizes/font_size = 8
+text = "!"
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1202912111]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1937192030]
+position = Vector2(8, 8)
+shape = SubResource("CircleShape2D_ebum8")
+debug_color = Color(1, 1, 1, 0.12941177)
+
+[node name="PeepholeUI" type="CanvasLayer" parent="." unique_id=1681158048]
+visible = false
+
+[node name="PeepholeImage" type="Sprite2D" parent="PeepholeUI" unique_id=1640799413]
+position = Vector2(579, 326)
+scale = Vector2(1.882353, 1.6078432)
+texture = ExtResource("3_3cdqv")
+
+[node name="Panel" type="Panel" parent="PeepholeUI" unique_id=1024669484]
+offset_left = 24.0
+offset_top = 514.0
+offset_right = 779.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="PeepholeUI/Panel" unique_id=1858313573]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 16.0
+offset_right = 53.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 18
+text = "qqq"
+
+[node name="TalkSound" type="AudioStreamPlayer2D" parent="PeepholeUI" unique_id=264339793]
+stream = ExtResource("5_axcxc")
+
+[node name="DoorSprite" type="Sprite2D" parent="." unique_id=1370145707]
+position = Vector2(8, 6)
+texture = ExtResource("5_3cdqv")
+
+[node name="DoorOpend" type="Sprite2D" parent="." unique_id=1159968]
+visible = false
+position = Vector2(8, 6)
+texture = ExtResource("6_lrxva")

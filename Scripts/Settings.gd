@@ -10,8 +10,6 @@ const ACTIONS_TO_SAVE = ["ui_left", "ui_right", "ui_up", "ui_down", "interact"]
 func _ready() -> void:
 	load_settings()
 	apply_volumes()
-	load_settings()
-	apply_volumes()
 	load_keybinds()
 
 func apply_volumes() -> void:
@@ -20,6 +18,7 @@ func apply_volumes() -> void:
 
 func save_settings() -> void:
 	var config = ConfigFile.new()
+	config.load(SAVE_PATH)  # mantém keybinds já salvos
 	config.set_value("audio", "music_volume", music_volume)
 	config.set_value("audio", "sfx_volume", sfx_volume)
 	config.save(SAVE_PATH)
@@ -28,8 +27,9 @@ func load_settings() -> void:
 	var config = ConfigFile.new()
 	var err = config.load(SAVE_PATH)
 	if err == OK:
-		music_volume = config.get_value("audio", "music_volume", 1.0)
-		sfx_volume = config.get_value("audio", "sfx_volume", 1.0)
+		# Volume é linear de 0.0 a 1.0; clamp corrige valores salvos com a faixa antiga dos sliders.
+		music_volume = clampf(config.get_value("audio", "music_volume", 1.0), 0.0, 1.0)
+		sfx_volume = clampf(config.get_value("audio", "sfx_volume", 1.0), 0.0, 1.0)
 
 func save_keybinds() -> void:
 	var config = ConfigFile.new()

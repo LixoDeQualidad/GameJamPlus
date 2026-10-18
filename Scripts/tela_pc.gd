@@ -18,7 +18,9 @@ func _abrir_app(numero: int) -> void:
 	match numero:
 		1:
 			print("Abrindo App 1")
-			# get_tree().change_scene_to_file("res://apps/app1.tscn")
+			# Abre o app dentro da tela do PC (herda o PROCESS_MODE_ALWAYS)
+			var app := preload("res://Cenas/app_comida.tscn").instantiate()
+			add_child(app)
 		2:
 			print("Abrindo App 2")
 		3:
