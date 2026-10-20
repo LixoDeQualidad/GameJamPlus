@@ -1,12 +1,12 @@
 extends CanvasLayer
 
 func _ready() -> void:
+	MusicManager.play_game_music()
 	# Necessário para a tela funcionar com o jogo pausado
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	MusicManager.play_game_music()
 
 	$Button.pressed.connect(_abrir_app.bind(1))
-	$Button2.pressed.connect(_abrir_app.bind(2))
-	$Button3.pressed.connect(_abrir_app.bind(3))
 	$BtnFechar.pressed.connect(fechar)
 
 func _unhandled_input(event: InputEvent) -> void:

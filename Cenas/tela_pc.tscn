@@ -19,26 +19,12 @@ offset_right = 1141.0
 offset_bottom = 641.0
 text = "ON/OFF"
 
-[node name="Button2" type="Button" parent="." unique_id=422461690]
-offset_left = 126.0
-offset_top = 28.0
-offset_right = 179.0
-offset_bottom = 86.0
-text = "App2"
-
 [node name="Button" type="Button" parent="." unique_id=106641852]
-offset_left = 30.0
-offset_top = 19.0
-offset_right = 92.0
-offset_bottom = 77.0
+offset_left = 557.0
+offset_top = 294.0
+offset_right = 619.0
+offset_bottom = 352.0
 text = "
 "
 icon = ExtResource("3_e63rd")
 flat = true
-
-[node name="Button3" type="Button" parent="." unique_id=119503968]
-offset_left = 257.0
-offset_top = 31.0
-offset_right = 304.0
-offset_bottom = 89.0
-text = "app3"

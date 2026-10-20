@@ -1,39 +1,36 @@
 [gd_scene format=3 uid="uid://dv1cy3bnasqit"]
 
 [ext_resource type="Script" uid="uid://cfanrqnbe78sy" path="res://Scripts/poster.gd" id="1_ld5fk"]
-[ext_resource type="Texture2D" uid="uid://ceb3rnhns4g7x" path="res://Sprites/Originais/poster.png" id="2_crhat"]
+[ext_resource type="Texture2D" uid="uid://dsob684ygarxo" path="res://Sprites/Originais/poster_menor.png" id="2_1iqxl"]
 [ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="3_1iqxl"]
 [ext_resource type="Texture2D" uid="uid://dp8kg6nepuip6" path="res://Sprites/Originais/PosterAberto.png" id="3_crhat"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvf33"]
-size = Vector2(9, 11)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xvf33"]
 radius = 13.038404
 
-[node name="Poster" type="Area2D" unique_id=1955685443 groups=["item_quest"]]
-script = ExtResource("1_ld5fk")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfyk3"]
+size = Vector2(8, 9)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=806286689]
-position = Vector2(1.5, 1.5)
-shape = SubResource("RectangleShape2D_xvf33")
+[node name="Poster" type="Area2D" unique_id=2014436417 groups=["item_quest"]]
+script = ExtResource("1_ld5fk")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1236218966]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=498684822]
-position = Vector2(1, 1)
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_xvf33")
 debug_color = Color(1, 1, 1, 0.14117648)
 
 [node name="Poster" type="Sprite2D" parent="." unique_id=339224739]
-position = Vector2(1, 1)
-texture = ExtResource("2_crhat")
+position = Vector2(0.9999997, 0.25)
+scale = Vector2(0.28571427, 0.2638889)
+texture = ExtResource("2_1iqxl")
 
 [node name="Label" type="Label" parent="." unique_id=1533729623]
-offset_left = -16.0
-offset_top = -15.0
-offset_right = 24.0
-offset_bottom = 8.0
+offset_left = -21.0
+offset_top = -17.0
+offset_right = 26.0
+offset_bottom = -11.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1iqxl")
 theme_override_font_sizes/font_size = 4
@@ -47,6 +44,10 @@ offset_top = -2.0
 offset_right = 691.0
 offset_bottom = 387.0
 texture = ExtResource("3_crhat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1981589619]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_pfyk3")
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_body_exited"]

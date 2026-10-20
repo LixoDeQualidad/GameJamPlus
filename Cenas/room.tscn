@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="4_8kejc"]
 [ext_resource type="PackedScene" uid="uid://b3b04uxa3nwbt" path="res://entites/door.tscn" id="4_sfgmp"]
 [ext_resource type="PackedScene" uid="uid://bqeidnn8grky0" path="res://entites/telescope.tscn" id="6_qsu18"]
+[ext_resource type="Texture2D" uid="uid://e22w8eoo6as7" path="res://Sprites/Originais/tile_map.png" id="7_8kejc"]
 [ext_resource type="PackedScene" uid="uid://d03hkyxrvcip5" path="res://entites/pc.tscn" id="7_sfgmp"]
 [ext_resource type="Script" uid="uid://bdb1opr6h4rii" path="res://Scripts/DialogueBox.gd" id="9_t3whl"]
 [ext_resource type="Script" uid="uid://cuws1yhdns63g" path="res://Scripts/pause_menu.gd" id="11_t3whl"]
@@ -16,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://br5ca6di6asrm" path="res://entites/bed.tscn" id="15_rono1"]
 [ext_resource type="PackedScene" uid="uid://dv1cy3bnasqit" path="res://entites/poster.tscn" id="15_vehx5"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vehx5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kejc"]
 texture = ExtResource("1_h7onx")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, -8, 8, -8, 8, 8, 3.4173164, 8)
@@ -39,17 +40,161 @@ texture = ExtResource("1_h7onx")
 2:2/0 = 0
 3:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kejc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rono1"]
 texture = ExtResource("2_a1twj")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 0:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rf7h"]
+texture = ExtResource("7_8kejc")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_pl7un"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_vehx5")
-sources/1 = SubResource("TileSetAtlasSource_8kejc")
+sources/0 = SubResource("TileSetAtlasSource_8kejc")
+sources/1 = SubResource("TileSetAtlasSource_rono1")
+sources/2 = SubResource("TileSetAtlasSource_3rf7h")
 
 [node name="RoomDia1" type="Node2D" unique_id=662619707]
 script = ExtResource("1_cp311")
@@ -60,6 +205,10 @@ offset_top = 75.0
 offset_right = 394.0
 offset_bottom = 258.0
 color = Color(0, 0, 0, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1746528063]
+tile_map_data = PackedByteArray("AAAMAAgAAgACAAYAABAMAAkAAgACAAYAABAMAAoAAgACAAYAABAMAAsAAgAFAAYAAAAMAAwAAgAFAAYAAAANAAwAAgAGAAYAAAAOAAwAAgAHAAYAAAAPAAwAAgACAAcAAAAPAAsAAgACAAYAAAAPAAoAAgACAAYAABAPAAkAAgAEAAYAAAAPAAgAAgACAAYAABAOAAgAAgADAAYAABAOAAcAAgAGAAUAAAANAAgAAgAEAAYAABANAAkAAgAGAAYAAAANAAoAAgAEAAYAABANAAsAAgACAAYAAAAOAAsAAgADAAYAAAAOAAoAAgADAAYAABAOAAkAAgAHAAYAAAAMAAcAAgAEAAUAAAALAAcAAgAGAAUAAAAKAAcAAgAFAAUAAAAJAAcAAgAEAAUAAAAJAAgAAgAFAAYAABAJAAkAAgAFAAYAABAJAAoAAgAFAAYAABAJAAsAAgACAAYAAAAKAAsAAgADAAYAAAAKAAwAAgADAAYAAAAKAA0AAgAEAAcAAAALAA0AAgAFAAcAAAALAA4AAAABAAIAAAAMAA4AAAABAAIAAAANAA4AAAABAAIAAAAOAA4AAAABAAIAAAAPAA0AAgAEAAcAAAAQAA0AAgAEAAcAAAARAA0AAgAFAAcAAAARAAwAAgAEAAcAAAASAAwAAgAFAAcAAAASAAsAAgAFAAYAAAATAAoAAgACAAYAABATAAkAAgAGAAYAAAATAAgAAgAGAAcAAAATAAcAAgAEAAUAAAASAAYAAAABAAAAAAARAAYAAAABAAAAAAAQAAYAAAABAAAAAAAPAAYAAAABAAAAAAAOAAYAAAABAAAAAAANAAYAAAABAAAAAAAMAAYAAAABAAAAAAAKAAgAAgAEAAYAABALAAkAAgADAAYAABAPAAcAAgADAAUAAAAQAAcAAgACAAUAAAARAAcAAgADAAUAAAASAAcAAgAEAAUAAAASAAgAAgAGAAYAAAASAAkAAgAFAAYAAAASAAoAAgADAAYAABARAAoAAgAEAAYAABARAAsAAgAEAAYAAAARAAkAAgAGAAYAAAAQAAgAAgAEAAYAAAARAAgAAgAFAAYAAAAQAAkAAgAFAAYAAAAQAAoAAgAFAAYAABAQAAsAAgADAAYAAAAQAAwAAgADAAcAAAAOAA0AAgAHAAcAAAANAA0AAgAHAAcAAAAMAA0AAgAGAAcAAAALAAwAAgAEAAYAAAALAAsAAgAEAAYAAAALAAoAAgADAAYAABALAAgAAgADAAYAABAKAAkAAgAEAAYAABAKAAoAAgAEAAYAABAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAcAAAACAAEAAAAUAAgAAAACAAEAAAAUAAkAAAACAAEAAAAUAAoAAAACAAEAAAATAAsAAgAGAAYAAAATAAwAAgAGAAcAAAALAAYAAQAAAAEAAAAIAAcAAAAAAAEAAAAIAAgAAAAAAAEAAAAIAAkAAAAAAAEAAAAIAAoAAAAAAAEAAAAIAAsAAAAAAAEAAAAIAAwAAAAAAAEAAAAIAA0AAAAAAAEAAAAJAA0AAgACAAcAAAAJAA4AAAABAAIAAAAIAA4AAAAAAAIAAAAKAA4AAAADAAIAAAAJAAwAAgACAAYAAAAPAA4AAAABAAIAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAATAA0AAgAHAAcAAAASAA0AAgAGAAcAAAATAA4AAAABAAIAAAAUAA0AAAACAAEAAAAUAAwAAAACAAEAAAAUAAsAAAACAAEAAAAUAA4AAAACAAIAAAASAA4AAAABAAIAAAANAAcAAgAFAAUAAAAIAAYAAAAAAAAAAAAUAAYAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_pl7un")
 
 [node name="DialogueBox" type="CanvasLayer" parent="." unique_id=1945383418]
 visible = false
@@ -87,10 +236,6 @@ theme_override_fonts/font = ExtResource("4_8kejc")
 theme_override_font_sizes/font_size = 20
 text = "hummm"
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1746528063]
-tile_map_data = PackedByteArray("AAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAANAAwAAAABAAEAAAAOAAwAAAABAAEAAAAPAAwAAAABAAEAAAAPAAsAAAABAAEAAAAPAAoAAAABAAEAAAAPAAkAAAABAAEAAAAPAAgAAAABAAEAAAAOAAgAAAABAAEAAAAOAAcAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAAOAAsAAAABAAEAAAAOAAoAAAABAAEAAAAOAAkAAAABAAEAAAAMAAcAAAABAAEAAAALAAcAAAABAAEAAAAKAAcAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAABAAEAAAAJAAsAAAABAAEAAAAKAAsAAAABAAEAAAAKAAwAAAABAAEAAAAKAA0AAAABAAEAAAALAA0AAAABAAEAAAALAA4AAAABAAIAAAAMAA4AAAABAAIAAAANAA4AAAABAAIAAAAOAA4AAAABAAIAAAAPAA0AAAABAAEAAAAQAA0AAAABAAEAAAARAA0AAAABAAEAAAARAAwAAAABAAEAAAASAAwAAAABAAEAAAASAAsAAAABAAEAAAATAAoAAAABAAEAAAATAAkAAAABAAEAAAATAAgAAAABAAEAAAATAAcAAAABAAEAAAASAAYAAAABAAAAAAARAAYAAAABAAAAAAAQAAYAAAABAAAAAAAPAAYAAAABAAAAAAAOAAYAAAABAAAAAAANAAYAAAABAAAAAAAMAAYAAAABAAAAAAAKAAgAAAABAAEAAAALAAkAAAABAAEAAAAPAAcAAAABAAEAAAAQAAcAAAABAAEAAAARAAcAAAABAAEAAAASAAcAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAASAAoAAAABAAEAAAARAAoAAAABAAEAAAARAAsAAAABAAEAAAARAAkAAAABAAEAAAAQAAgAAAABAAEAAAARAAgAAAABAAEAAAAQAAkAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAAQAAwAAAABAAEAAAAOAA0AAAABAAEAAAANAA0AAAABAAEAAAAMAA0AAAABAAEAAAALAAwAAAABAAEAAAALAAsAAAABAAEAAAALAAoAAAABAAEAAAALAAgAAAABAAEAAAAKAAkAAAABAAEAAAAKAAoAAAABAAEAAAAJAAYAAAABAAAAAAAKAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAcAAAACAAAAAAAUAAgAAAACAAEAAAAUAAkAAAACAAEAAAAUAAoAAAACAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAALAAYAAQAAAAEAAAAIAAcAAAAAAAEAAAAIAAgAAAAAAAEAAAAIAAkAAAAAAAEAAAAIAAoAAAAAAAEAAAAIAAsAAAAAAAEAAAAIAAwAAAAAAAEAAAAIAA0AAAAAAAEAAAAJAA0AAAABAAEAAAAJAA4AAAABAAIAAAAIAA4AAAAAAAIAAAAKAA4AAAADAAIAAAAJAAwAAAABAAEAAAAPAA4AAAABAAIAAAAQAA4AAAABAAIAAAARAA4AAAABAAIAAAATAA0AAAABAAEAAAASAA0AAAABAAEAAAATAA4AAAABAAIAAAAUAA0AAAACAAEAAAAUAAwAAAACAAEAAAAUAAsAAAACAAEAAAAUAA4AAAACAAIAAAASAA4AAAABAAIAAAANAAcAAAABAAEAAAA=")
-tile_set = SubResource("TileSet_pl7un")
-
 [node name="Player" parent="." unique_id=283352557 instance=ExtResource("3_qsu18")]
 top_level = true
 position = Vector2(253, 202)
@@ -103,10 +248,10 @@ zoom = Vector2(4, 4)
 position = Vector2(176, 96)
 
 [node name="Telescope" parent="." unique_id=1345883108 instance=ExtResource("6_qsu18")]
-position = Vector2(172, 211)
+position = Vector2(180, 212)
 
 [node name="pc" parent="." unique_id=54256555 instance=ExtResource("7_sfgmp")]
-position = Vector2(251, 107)
+position = Vector2(257, 111)
 
 [node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1545255749]
 visible = false
@@ -142,10 +287,10 @@ offset_bottom = 532.0
 text = "Menu"
 
 [node name="teclado" parent="." unique_id=1564343803 instance=ExtResource("13_qbk1c")]
-position = Vector2(294.88403, 118.4975)
+position = Vector2(300, 110)
 
 [node name="Poster" parent="." unique_id=1955685443 instance=ExtResource("15_vehx5")]
-position = Vector2(216, 104)
+position = Vector2(153, 106)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=798354057]
 script = ExtResource("15_8kejc")
@@ -161,7 +306,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="bed" parent="." unique_id=1783714251 instance=ExtResource("15_rono1")]
-position = Vector2(241, 213)
+position = Vector2(312, 207)
 
 [connection signal="pressed" from="PauseMenu/ButtonContinuar" to="PauseMenu" method="_on_button_continuar_pressed"]
 [connection signal="pressed" from="PauseMenu/ButtonSair" to="PauseMenu" method="_on_btn_sair_pressed"]

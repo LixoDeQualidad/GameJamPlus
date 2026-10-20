@@ -1,7 +1,7 @@
 extends Node
 
-const MENU_MUSIC = preload("res://audios/musica1.mp3")
-const GAME_MUSIC = preload("res://audios/musica2.mp3")
+const MENU_MUSIC = preload("res://audios/Jam 11loop.wav")
+const GAME_MUSIC = preload("res://audios/Jam 12 loop.wav")
 
 const FADE_DURATION := 1.5 # segundos
 const MAX_VOLUME_DB := 0.0

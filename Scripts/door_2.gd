@@ -17,7 +17,7 @@ então eu peguei"
 @onready var knock_timer: Timer = $KnockTimer
 @onready var peephole_ui: CanvasLayer = $PeepholeUI
 @onready var dialog_label: Label = $PeepholeUI/Panel/Label
-@onready var peephole_image: Sprite2D = $PeepholeUI/PeepholeImage
+@onready var peephole_image: Sprite2D = $PeepholeUI/PeepHoleGirl
 @onready var door_sprite: Sprite2D = $DoorSprite
 @export var item_scene: PackedScene
 @export var item_offset: Vector2 = Vector2(0, 2)

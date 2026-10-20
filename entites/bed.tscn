@@ -20,11 +20,14 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_pfyk3"]
 radius = 23.194826
 
-[node name="bed" type="Node2D" unique_id=1783714251]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfyk3"]
+size = Vector2(16, 20)
+
+[node name="bed" type="Area2D" unique_id=1445246611]
 script = ExtResource("1_hdqup")
 
 [node name="Bed" type="Sprite2D" parent="." unique_id=1554177767]
-position = Vector2(4, -20)
+scale = Vector2(0.35106382, 0.38235295)
 texture = ExtResource("2_py1pt")
 
 [node name="PlayerSleepAnim" type="AnimatedSprite2D" parent="." unique_id=2070302983]
@@ -35,12 +38,14 @@ animation = &"lay_down"
 [node name="InteractionArea" type="Area2D" parent="." unique_id=175228674]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1414432931]
-position = Vector2(3, 3)
 shape = SubResource("CircleShape2D_pfyk3")
 debug_color = Color(1, 1, 1, 0.23137255)
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=898251592]
-position = Vector2(3.8412247, -6.4136963)
+position = Vector2(-13, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1497141308]
+shape = SubResource("RectangleShape2D_pfyk3")
 
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_body_exited"]

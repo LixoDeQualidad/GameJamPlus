@@ -5,40 +5,41 @@
 [ext_resource type="Texture2D" uid="uid://5cc7nhff5coq" path="res://Sprites/Originais/telescope.png" id="3_sxbbs"]
 [ext_resource type="FontFile" uid="uid://d35ga6nwbo7eo" path="res://fonte/retro-gaming/Retro Gaming.ttf" id="4_127pa"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xvf33"]
-custom_solver_bias = 0.1
-radius = 6.897856
-height = 22.359816
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ebum8"]
 radius = 40.012497
 
-[node name="Telescope" type="Area2D" unique_id=1345883108 groups=["item_quest"]]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pfyk3"]
+radius = 0.98480785
+height = 18.073837
+
+[node name="Telescope" type="Area2D" unique_id=1765625012 groups=["item_quest"]]
 script = ExtResource("1_d2qri")
 view_scene = ExtResource("2_127pa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=17414436]
-position = Vector2(-0.9999995, 1.9999998)
-rotation = 1.7418386
-shape = SubResource("CapsuleShape2D_xvf33")
-
 [node name="Telescope" type="Sprite2D" parent="." unique_id=772307917]
-position = Vector2(-1, -22)
+position = Vector2(-2, -16)
+scale = Vector2(0.71875, 0.796875)
 texture = ExtResource("3_sxbbs")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=809872725]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1667130579]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_ebum8")
 debug_color = Color(1, 1, 1, 0)
 
 [node name="Label" type="Label" parent="." unique_id=205441838]
-offset_left = -31.0
-offset_top = -15.0
-offset_right = 36.0
-offset_bottom = 8.0
+offset_left = -32.0
+offset_top = -13.0
+offset_right = 35.0
+offset_bottom = 10.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_127pa")
 theme_override_font_sizes/font_size = 4
-text = "Ela ama  esse  telescópio...
+text = "Ela  ama  esse  telescópio...
 "
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=554226272]
+position = Vector2(-2.0000002, -2.9802322e-08)
+rotation = 1.7453293
+shape = SubResource("CapsuleShape2D_pfyk3")
